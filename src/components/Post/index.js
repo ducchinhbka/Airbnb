@@ -16,7 +16,7 @@ const Post = (props) => {
 
             <Text style={styles.bedrooms}>{post.bed} bed. {post.bedroom} bed room</Text>
             <Text style={styles.description} numberOfLines={2}>
-                {post.type}. {post.title}. {post.description}
+                {post.type}. {post.title}.
                 
             </Text>
             <Text style={styles.prices}>
