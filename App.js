@@ -22,7 +22,7 @@ const App: () => Node = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-
+        <HomeScreen/>
       </SafeAreaView>
     </>
   );

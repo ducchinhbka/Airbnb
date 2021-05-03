@@ -1,10 +1,28 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {
+    View, 
+    Text, 
+    ImageBackground, 
+    Pressable} from 'react-native';
+import styles from './styles';
 
 const HomeScreen = (props) => {
  return (
      <View>
-         <Text>This is Home Screen</Text>
+
+         {/*Search bar */}
+         <ImageBackground source={require('../../../assets/images/wallpaper.jpg')} style={styles.image}>
+
+            <Text style={styles.title}>Go Near</Text>
+
+            <Pressable
+                style={styles.button}
+                onPress={() => console.warn('Button clicked')}
+            >
+                <Text style={styles.buttonText}>Expore nearby stays</Text>
+            </Pressable>
+         </ImageBackground>
+         
      </View>
  )
 }
