@@ -19,6 +19,7 @@ import Post from './src/components/Post';
 
 import Entypo from 'react-native-vector-icons/Entypo';
 import feed from './assets/data/feed';
+import DestinationSearch from './src/screens/DestinationSearch';
 
 const post1 = feed[0];
 
@@ -29,7 +30,7 @@ const App: () => Node = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <SearchResultsScreen/>
+        <DestinationSearch/>
       </SafeAreaView>
     </>
   );

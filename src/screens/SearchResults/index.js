@@ -12,7 +12,6 @@ const SearchResultsScreen = (props) => {
                 data={feed}
                 renderItem={({item}) => <Post post={item}/>}
                 keyExtractor={item => item.id}
-
             />
         </View>
     );
