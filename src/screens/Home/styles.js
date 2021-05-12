@@ -41,14 +41,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         position: 'absolute',
         zIndex: 100,
-        top: 20
+        top: 40
         
 
     },
 
     searchButtonText: {
         fontSize: 16,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        
     },
 
 });
