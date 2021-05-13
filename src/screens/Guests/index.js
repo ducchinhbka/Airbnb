@@ -11,7 +11,7 @@ const GuestsScreen = (props) => {
     const [infants, setInfants] = useState(0);
     return (
 
-        <View style={{height: '100%', justifyContent: 'space-between'}}>
+        <View style={{ height: '100%', justifyContent: 'space-between' }}>
 
             <View>
                 <View style={styles.row}>
@@ -87,18 +87,22 @@ const GuestsScreen = (props) => {
                     </View>
                 </View>
             </View>
-            <Pressable 
-                onPress={() => navigation.navigate()}
+            <Pressable
+                onPress={() =>
+                    navigation.navigate('Explore', {
+                        screen: 'SearchResults',
+                    })
+                }
                 style={{
-                marginBottom: 20, 
-                backgroundColor: '#f15454',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: 50,
-                marginHorizontal: 20, 
-                borderRadius: 10,
-            }}>
-                <Text style={{fontSize: 18, color: 'white', fontWeight: 'bold'}}>Search</Text>
+                    marginBottom: 20,
+                    backgroundColor: '#f15454',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: 50,
+                    marginHorizontal: 20,
+                    borderRadius: 10,
+                }}>
+                <Text style={{ fontSize: 18, color: 'white', fontWeight: 'bold' }}>Search</Text>
             </Pressable>
         </View>
     );
