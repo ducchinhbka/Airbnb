@@ -90,7 +90,7 @@ const GuestsScreen = (props) => {
             <Pressable
                 onPress={() =>
                     navigation.navigate('Explore', {
-                        screen: 'SearchResults',
+                        screen: 'SearchResultsTabNavigator',
                     })
                 }
                 style={{
