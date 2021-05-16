@@ -1,37 +1,37 @@
-import React, {useState} from 'react';
-import { Text, View, TextInput, FlatList, Pressable } from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 import styles from './styles';
-import search from '../../../assets/data/search';
-import Entypo from 'react-native-vector-icons/Entypo';
 import { useNavigation } from '@react-navigation/native';
-
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import SuggestionRow from './SuggestionRow';
 const DestinationSearch = (props) => {
 
     const navigation = useNavigation();
-    const [inputText, setInputText] = useState('');
     return (
+
+
         <View style={styles.container}>
-            <TextInput
-                style={styles.textInput}
-                placeholder="Where are you going?"
-                value={inputText}
-                onChangeText={setInputText}
+
+            <GooglePlacesAutocomplete
+                placeholder='Where are you going?'
+                onPress={(data, details = null) => {
+                    navigation.navigate('Guests')
+                    console.log(data, details);
+                }}
+                query={{
+                    key: 'AIzaSyBmeuaWQ005oxyRalpVH9c0C8yfHGPQSUM',
+                    language: 'en',
+                    type: '(cities)'
+                }}
+                fetchDetails
+                styles={{
+                    textInput: styles.textInput
+                }}
+                suppressDefaultStyles
+                renderRow={(item) => <SuggestionRow item={item} />}
             />
 
-            <FlatList
-                keyExtractor={item => item.id}
-                data={search}
-                renderItem={({item}) => 
-                    <Pressable style={styles.row}
-                        onPress={() => navigation.navigate('Guests')}
-                    >
-                        <View style={styles.iconContainer}>
-                            <Entypo name={'location-pin'} size={30}/>
-                        </View>
-                        <Text style={styles.locationText}>{item.description}</Text>
-                    </Pressable> 
-                }
-            />
+
         </View>
     );
 }
